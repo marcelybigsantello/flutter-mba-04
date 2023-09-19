@@ -7,6 +7,8 @@ import 'package:sqflite/sqflite.dart' as sqflite;
 part 'appDatabase.g.dart';
 
 @Database(version: 1, entities: [Book])
-abstract class AppDatabase extends FloorDatabase{
+abstract class AppDatabase extends FloorDatabase {
   BookDAO get bookDAO;
+
+  
 }

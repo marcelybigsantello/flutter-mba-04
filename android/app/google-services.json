@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "71045534193",
+    "project_id": "aoj-e3118",
+    "storage_bucket": "aoj-e3118.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:71045534193:android:563820cece04029815b450",
+        "android_client_info": {
+          "package_name": "com.example.persistences_types"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRvQLRvzVxVWYLdofHg02hGoV24YZKwcs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
