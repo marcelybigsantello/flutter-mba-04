@@ -3,10 +3,10 @@ import 'package:floor/floor.dart';
 
 @entity
 class Car {
-  String name;
-  String model;
-  String brand;
-  String year;
+  final String name;
+  final String model;
+  final String brand;
+  final String year;
 
   //Representa o nosso id no firebase
   DocumentReference? reference;

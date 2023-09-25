@@ -60,11 +60,14 @@ class _ListCarsWidgetState extends State<ListCarsWidget> {
   }
 
   Widget buildList(BuildContext context){
+    //Stream constroi algo que são modificados de tempos em tempos
     return StreamBuilder(stream: FirebaseFirestore.instance.collection("cars").snapshots(),
      builder: (context, snapshot){
       if (!snapshot.hasData) return  const LinearProgressIndicator();
-      if (snapshot.data == null) {
-        return Container(child: const Text("Nenhum carro encontrado!!"));
+      if (snapshot.data == null || snapshot.data!.size == 0) {
+        return const Center (
+          child: Text("Nenhum carro encontrado!!")
+        );
       } else {
         return buildListView(context, snapshot.data!.docs);
       }
@@ -75,7 +78,7 @@ class _ListCarsWidgetState extends State<ListCarsWidget> {
   
   Widget buildListView(BuildContext context, List<QueryDocumentSnapshot<Map<String, dynamic>>> snapshots) {
     return ListView(
-      padding: const EdgeInsets.only(top: 30),
+      padding: const EdgeInsets.only(top: 30), //espaçamento
       children: snapshots.map((data) => _buildItem(context, data)).toList()
     );
   }
@@ -86,8 +89,8 @@ class _ListCarsWidgetState extends State<ListCarsWidget> {
     return Padding(
       padding: const EdgeInsets.all(12),
       child: ListItemWidget(leading: "", title: car.name, subtitle: car.brand, 
-      onLongPress: (){
-
+      onLongPress: () async {
+          await data.reference.delete();
       }));
 
   }
